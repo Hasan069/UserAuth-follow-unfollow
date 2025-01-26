@@ -33,54 +33,58 @@ const signup = () => {
 
   return (
     <>
-      signup
-      <div className="h-12 w-44">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>username</label>
-          <input
-            {...register("username", {
-              required: true,
-              maxLength: 20,
-            })}
-            className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
-            placeholder="username"
-          />
-          {errors?.firstName?.type === "required" && (
-            <p className="text-red-500">This field is required</p>
-          )}
-          {errors?.firstName?.type === "maxLength" && (
-            <p className="text-red-500">username cannot exceed 20 characters</p>
-          )}
-          <label>Email</label>
-          <input
-            name="email"
-            {...register("email", {
-              required: "Required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "invalid email address",
-              },
-            })}
-            className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
-            placeholder="username"
-          />
-          {errors?.firstName?.type === "required" && (
-            <p className="text-red-500">This field is required</p>
-          )}
-          <label>password</label>
-          <input
-            {...register("password", {
-              required: true,
-              maxLength: 32,
-            })}
-            className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
-            placeholder="username"
-          />
-          {errors?.firstName?.type === "required" && (
-            <p className="text-red-500">This field is required</p>
-          )}
-          <button type="submit">submit</button>
-        </form>
+      <div className="flex items-center justify-center h-screen ">
+        <div className="h-12 w-44">
+          signup
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>username</label>
+            <input
+              {...register("username", {
+                required: true,
+                maxLength: 20,
+              })}
+              className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
+              placeholder="username"
+            />
+            {errors?.firstName?.type === "required" && (
+              <p className="text-red-500">This field is required</p>
+            )}
+            {errors?.firstName?.type === "maxLength" && (
+              <p className="text-red-500">
+                username cannot exceed 20 characters
+              </p>
+            )}
+            <label>Email</label>
+            <input
+              name="email"
+              {...register("email", {
+                required: "Required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
+              })}
+              className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
+              placeholder="username"
+            />
+            {errors?.firstName?.type === "required" && (
+              <p className="text-red-500">This field is required</p>
+            )}
+            <label>password</label>
+            <input
+              {...register("password", {
+                required: true,
+                maxLength: 32,
+              })}
+              className="text-white h-8 rounded-md bg-slate-950 p-2 border border-white"
+              placeholder="username"
+            />
+            {errors?.firstName?.type === "required" && (
+              <p className="text-red-500">This field is required</p>
+            )}
+            <button type="submit">submit</button>
+          </form>
+        </div>
       </div>
     </>
   );
